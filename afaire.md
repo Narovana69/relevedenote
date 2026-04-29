@@ -1,6 +1,6 @@
 ## SETUP
 - [X] Créer le projet CodeIgniter 4
-- [ ] Configurer `.env` (base de données `relevenotes`, host, user, password)
+- [X] Configurer `.env` (base de données `relevenotes`, host, user, password)
 - [X] Importer `schema.sql` puis `data_insert.sql` dans MySQL
 
 ---
@@ -100,6 +100,7 @@ Quand on clique sur un étudiant, afficher des liens :
 - [ ] Appliquer le CSS dans le layout principal
 - [ ] S'assurer que login, liste, formulaire et relevés sont stylisés
 - [ ] Baser sur le template dans `/Design-template`
+- [ ] les fichiers design .scss se trouve normalement dans `assets/scss`
 
 ---
 
