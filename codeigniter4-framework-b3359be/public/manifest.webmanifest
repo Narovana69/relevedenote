@@ -1,0 +1,17 @@
+{
+  "name": "Bibliotheque Zen",
+  "short_name": "BiblioZen",
+  "start_url": "/catalogue",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F9F9F9",
+  "theme_color": "#4A6572",
+  "description": "Application de gestion de bibliotheque utilisable hors ligne.",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

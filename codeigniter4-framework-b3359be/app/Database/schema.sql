@@ -1,0 +1,70 @@
+CREATE DATABASE if NOT EXISTS relevenotes;
+
+use relevenotes;
+
+DROP TABLE IF EXISTS releve_note;
+DROP TABLE IF EXISTS matiere;
+DROP TABLE IF EXISTS semestre;
+DROP TABLE IF EXISTS etudiant;
+DROP TABLE IF EXISTS sousOption;
+DROP TABLE IF EXISTS option;
+DROP TABLE IF EXISTS UE;
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE  users(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(30) NOT NULL,
+    password VARCHAR(25) NOT NULL
+);
+
+CREATE TABLE UE(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    libelle VARCHAR(10) NOT NULL
+);
+
+CREATE TABLE option(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(20) NOT NULL,
+    responsable VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE sousOption(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    idOption INT NOT NULL,
+    FOREIGN KEY (idOption) REFERENCES option(id)
+);
+
+CREATE TABLE etudiant (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(50) NOT NULL,
+    prenom VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE semestre(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(20) NOT NULL,
+    idOption INT NOT NULL,
+    idSousOption INT NOT NULL,
+    FOREIGN KEY (idOption) REFERENCES option(id),
+    FOREIGN KEY (idSousOption) REFERENCES sousOption(id)
+);
+
+CREATE TABLE matiere(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    UE INT NOT NULL,
+    coefficient FLOAT NOT NULL,
+    idSousOption INT NOT NULL,
+    FOREIGN KEY (UE) REFERENCES UE(id),
+    FOREIGN KEY (idSousOption) REFERENCES sousOption(id)
+);
+
+CREATE TABLE releve_note(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    idSemestre INT NOT NULL,
+    UE INT NOT NULL,
+    idEtudiant INT NOT NULL,
+    note FLOAT NOT NULL,
+    FOREIGN KEY (idSemestre) REFERENCES semestre(id),
+    FOREIGN KEY (UE) REFERENCES UE(id),
+    FOREIGN KEY (idEtudiant) REFERENCES etudiant(id)
+);

@@ -1,0 +1,404 @@
+@import 'variable';
+
+body {
+    background-color: $neutral-light;
+    font-family: 'Segoe UI', 'Noto Sans', 'Liberation Sans', Arial, sans-serif;
+    color: $neutral-dark;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+.topbar {
+    background: $card-bg;
+    border-bottom: 1px solid $border;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+}
+
+.brand {
+    color: $primary;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.main-nav {
+    display: flex;
+    gap: 1rem;
+
+    a {
+        color: $neutral-dark;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    a:hover {
+        color: $primary;
+    }
+}
+
+h1 {
+    color: $neutral-dark;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem 0;
+}
+
+.flash {
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.flash-success {
+    background: #e7f7ec;
+    color: #1d6f3d;
+    border: 1px solid #c0e8d0;
+}
+
+.flash-error {
+    background: #ffe9e7;
+    color: #962a23;
+    border: 1px solid #f4c3bf;
+}
+
+.catalogue-head {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.add-book-link {
+    background: $secondary;
+    color: $neutral-dark;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 1px solid scale-color($secondary, $lightness: -18%);
+}
+
+.add-book-link:hover {
+    background: scale-color($secondary, $lightness: -8%);
+    color: $neutral-dark;
+}
+
+.filter-bar {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+
+    input,
+    select {
+        padding: 0.65rem 0.75rem;
+        font-size: 1rem;
+        border: 1px solid $border;
+        border-radius: 8px;
+        min-width: 220px;
+    }
+
+    input:focus,
+    select:focus {
+        border-color: $primary;
+        outline: none;
+    }
+
+    button {
+        background-color: $primary;
+        color: white;
+        border: none;
+        padding: 0.65rem 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+}
+
+.table-wrap {
+    overflow-x: auto;
+    background: $card-bg;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.catalogue-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+        padding: 0.75rem;
+        border-bottom: 1px solid $border;
+        vertical-align: top;
+        text-align: left;
+    }
+
+    th {
+        background: $primary;
+        color: white;
+        font-size: 0.95rem;
+    }
+}
+
+.book-link {
+    color: $primary;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.book-link:hover {
+    text-decoration: underline;
+}
+
+.status-chip {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 700;
+}
+
+.status-chip-dispo {
+    background: $secondary;
+}
+
+.status-chip-prete {
+    background: $accent;
+}
+
+.badges {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+
+    .badge {
+        display: inline-block;
+        padding: 0.25rem 0.6rem;
+        border-radius: 999px;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        color: white;
+        font-weight: 700;
+    }
+
+    .badge-genre {
+        background: $neutral-dark;
+    }
+
+    .status-dispo {
+        background: $secondary;
+    }
+
+    .status-prete {
+        background: $accent;
+    }
+}
+
+.table-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.emprunt-form {
+    display: flex;
+    gap: 0.4rem;
+
+    input {
+        flex: 1;
+        min-width: 130px;
+        border: 1px solid $border;
+        border-radius: 6px;
+        padding: 0.45rem 0.55rem;
+    }
+}
+
+.btn {
+    border: none;
+    border-radius: 6px;
+    padding: 0.45rem 0.7rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+}
+
+.btn-preter {
+    background: $secondary;
+    color: $neutral-dark;
+}
+
+.btn-retourner {
+    background: $accent;
+}
+
+.btn-delete {
+    background: #6c757d;
+}
+
+.btn-submit {
+    width: 100%;
+    background: $primary;
+}
+
+.last-borrower {
+    font-size: 0.82rem;
+    color: $accent;
+    font-style: italic;
+}
+
+.pager-wrap {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.pagination {
+    display: inline-flex;
+    list-style: none;
+    padding: 0;
+    gap: 0.5rem;
+
+    li a {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        color: $primary;
+        background-color: white;
+        border: 1px solid $border;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    li.active a {
+        background-color: $primary;
+        color: white;
+        border-color: $primary;
+    }
+}
+
+.details-container {
+    display: flex;
+    gap: 2rem;
+    background: $card-bg;
+    padding: 1.25rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.details-cover {
+    flex: 0 0 300px;
+
+    img,
+    .book-placeholder {
+        width: 100%;
+        height: 450px;
+        border-radius: 8px;
+    }
+}
+
+.details-info {
+    flex: 1;
+}
+
+.details-author {
+    color: $primary;
+    margin: 0 0 1rem 0;
+    font-size: 1.25rem;
+}
+
+.back-link {
+    text-decoration: none;
+    color: $primary;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.resume-box {
+    background: $neutral-light;
+    padding: 1rem;
+    border-left: 4px solid $border;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+.form-container {
+    background-color: $card-bg;
+    padding: 1.25rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    max-width: 700px;
+}
+
+.form-title {
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+
+    label {
+        display: block;
+        margin-bottom: 0.4rem;
+        font-weight: 600;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 0.65rem;
+        border: 1px solid $border;
+        border-radius: 6px;
+        font-family: inherit;
+    }
+}
+
+.error-message {
+    color: #9a2d27;
+    font-size: 0.86rem;
+    margin-top: 0.3rem;
+    display: block;
+}
+
+.empty-state {
+    color: #666;
+}
+
+@media (max-width: 900px) {
+    .details-container {
+        flex-direction: column;
+    }
+
+    .details-cover {
+        flex: 1;
+    }
+
+    .catalogue-head {
+        justify-content: stretch;
+    }
+
+    .add-book-link {
+        text-align: center;
+        width: 100%;
+    }
+}
