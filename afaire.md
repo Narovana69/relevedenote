@@ -1,7 +1,7 @@
-## ✅ SETUP
-- [ ] Créer le projet CodeIgniter 4
+## SETUP
+- [X] Créer le projet CodeIgniter 4
 - [ ] Configurer `.env` (base de données `relevenotes`, host, user, password)
-- [ ] Importer `schema.sql` puis `data_insert.sql` dans MySQL
+- [X] Importer `schema.sql` puis `data_insert.sql` dans MySQL
 
 ---
 
@@ -18,7 +18,7 @@
 
 ---
 
-## FORMULAIRE — AJOUTER UNE NOTE
+## FORMULAIRE — AJOUTER UNE NOTE — MODIFIER UNE NOTE — SUPPRIMER UNE NOTE
 
 - [ ] Créer le Controller `NoteController` avec méthode `add()`
 - [ ] Créer la vue `add_note.php`
@@ -27,10 +27,15 @@
   - [ ] Champ note (float, 0–20)
 - [ ] **Permettre la saisie multiple** : on peut enregistrer plusieurs fois une note pour la même UE (la règle de gestion prend le max)
 - [ ] Insérer dans `releve_note`
-
+- [ ] Creer la vue `supp_note.php`
+  - [ ] selectionner une note pour la supprimer
+  - [ ] condition si supprimer et qu'elle est vide, la note sur la matiere en question reste 0(toujours 0 s'il y a rien meme apres supprimer, car note existe meme si elle n'a pas de valeur)
+- [ ] **Selection multiple de note** : on peut selectionner plusieurs notes pour les supprimer
+- [ ] Creer la vue `modif_note.php`
+  - [ ] selection de note et modification par manipulation dynamique du DOM
 ---
 
-## 👨‍🎓 LISTE DES ÉTUDIANTS
+## LISTE DES ÉTUDIANTS
 
 - [ ] Créer le Controller `EtudiantController` avec méthode `index()`
 - [ ] Afficher la liste de tous les étudiants
@@ -38,7 +43,7 @@
 
 ---
 
-## 📊 NOTES PAR ÉTUDIANT — VUES DÉTAIL
+## NOTES PAR ÉTUDIANT — VUES DÉTAIL
 
 ### Architecture des liens (par étudiant)
 Quand on clique sur un étudiant, afficher des liens :
@@ -67,7 +72,7 @@ Quand on clique sur un étudiant, afficher des liens :
 
 ---
 
-## ⚙️ RÈGLES DE GESTION
+## RÈGLES DE GESTION
 
 - [ ] **Note maximale par matière** : si plusieurs notes existent pour une même UE + étudiant → `MAX(note)`
 - [ ] **Matières optionnelles** : parmi les UEs d'un groupe, retenir celle avec la meilleure note
@@ -88,16 +93,17 @@ Quand on clique sur un étudiant, afficher des liens :
 
 ---
 
-## 🎨 DESIGN
+## DESIGN
 
 - [ ] Intégrer le fichier SCSS fourni pour personnaliser le thème
 - [ ] Compiler le SCSS en CSS (`sass custom.scss custom.css`)
 - [ ] Appliquer le CSS dans le layout principal
 - [ ] S'assurer que login, liste, formulaire et relevés sont stylisés
+- [ ] Baser sur le template dans `/Design-template`
 
 ---
 
-## 📁 STRUCTURE CONTROLLERS SUGGÉRÉE
+## STRUCTURE CONTROLLERS SUGGÉRÉE
 
 ```
 app/Controllers/
@@ -109,7 +115,7 @@ app/Controllers/
 
 ---
 
-## 🗄️ DONNÉES EN BASE (data_insert.sql)
+## DONNÉES EN BASE (data_insert.sql)
 
 - 3 options : Développement, BDD et Réseaux, Web et Design
 - 4 semestres : S3 (commun), S4-Dev, S4-BDD, S4-Web

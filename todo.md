@@ -14,4 +14,6 @@
 
 ### Page
 #### Login
-- **Login.html** : ajout de valeur par defaut statique pour se connecter
+- **Login.php** : ajout de valeur par defaut statique pour se connecter
+- [ ] ajout du `AuthController`
+- [ ] 
